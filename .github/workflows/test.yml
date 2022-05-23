@@ -125,7 +125,8 @@ jobs:
         run: solana-test-validator --url https://api.devnet.solana.com --clone metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s --clone PwDiXFxQsGra4sFFTT8r1QWRMd4vfumiWC1jfWNfdYT --reset &
       - run: sleep 6
       - run: solana airdrop 1000 $(solana-keygen pubkey tests/test-key.json) --url http://localhost:8899
-      - run: anchor test --skip-local-validator --provider.cluster localnet
+      - run: anchor deploy --skip-local-validator --provider.cluster localnet
+      - run: yarn test
 
       # - run: yarn run amman:start &
       # - run: yarn test
